@@ -17,7 +17,9 @@ class TrainingFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->sentence(2, true),
+            'level' => fake()->randomElement(['low', 'medium', 'high']),
+            'gender' => fake()->randomElement(['male', 'female'])
         ];
     }
 }
