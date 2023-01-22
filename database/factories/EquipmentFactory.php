@@ -17,7 +17,9 @@ class EquipmentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'weight' => fake()->numberBetween(0, 100),
+            'storage' => fake()->numberBetween(1, 20),
+            'usage' => fake()->randomElement(['legs', 'shoulders', 'back', 'abs', 'gluteus'])
         ];
     }
 }
