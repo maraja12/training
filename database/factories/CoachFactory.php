@@ -17,7 +17,9 @@ class CoachFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->name(),
+            'age' => fake()->numberBetween(18, 65),
+            'experience' => fake()->sentence(4, true)
         ];
     }
 }
