@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Coach;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -12,8 +12,15 @@ class CoachResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
+
+    public static $wrap = 'coach';
+
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'name' => $this->resource->name,
+            'age' => $this->resource->age,
+            'experience' => $this->resource->experience,
+        ];
     }
 }
