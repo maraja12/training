@@ -14,8 +14,8 @@ class AuthorisationController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:50',
-            'email' => 'required|string|max:50|email|unique:users',
+            'name' => 'required|string|max:200',
+            'email' => 'required|string|max:200|email|unique:users',
             'password' => 'required|string|min:8',
         ]);
 
