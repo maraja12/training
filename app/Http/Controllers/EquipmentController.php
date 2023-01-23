@@ -44,7 +44,7 @@ class EquipmentController extends Controller
         $validator = Validator::make($request->all(), [
             'weight' => 'required|integer|between:0,100',
             'storage' => 'required|integer|between:1,20',
-            'usage' => 'required|in:legs,shoulders,back,abs.gluteus',
+            'usage' => 'required|in:legs,shoulders,back,abs,gluteus',
         ]);
 
         if ($validator->fails()) {
@@ -58,7 +58,7 @@ class EquipmentController extends Controller
         ]);
 
         return response()->json([
-            'Equipment is created' => new EquipmentResource($equipment)
+            'Equipment is successfully created' => new EquipmentResource($equipment)
         ]);
     }
 
@@ -102,7 +102,7 @@ class EquipmentController extends Controller
         $validator = Validator::make($request->all(), [
             'weight' => 'required|integer|between:0,100',
             'storage' => 'required|integer|between:1,20',
-            'usage' => 'required|in:legs,shoulders,back,abs.gluteus',
+            'usage' => 'required|in:legs,shoulders,back,abs,gluteus',
         ]);
 
         if ($validator->fails()) {
@@ -116,7 +116,7 @@ class EquipmentController extends Controller
         $equipment->save();
 
         return response()->json([
-            'Equipment has been updated' => new EquipmentResource($equipment)
+            'Equipment is successfully updated' => new EquipmentResource($equipment)
         ]);
     }
 
@@ -131,6 +131,6 @@ class EquipmentController extends Controller
         //
         $equipment->delete();
 
-        return response()->json('Equipment is deleted');
+        return response()->json('Equipment is successfully deleted');
     }
 }

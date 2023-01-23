@@ -146,7 +146,7 @@ class TrainingController extends Controller
         $training->save();
 
         return response()->json([
-            'Training has been updated' => new TrainingResource($training)
+            'Training is successfully updated' => new TrainingResource($training)
         ]);
     }
 
@@ -161,6 +161,6 @@ class TrainingController extends Controller
         //
         $training->delete();
 
-        return response()->json('Training has been deleted');
+        return response()->json('Training is successfully deleted');
     }
 }

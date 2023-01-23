@@ -58,7 +58,7 @@ class CoachController extends Controller
         ]);
 
         return response()->json([
-            'Coach is created' => new CoachResource($coach)
+            'Coach is successfully created' => new CoachResource($coach)
         ]);
     }
 
@@ -116,7 +116,7 @@ class CoachController extends Controller
         $coach->save();
 
         return response()->json([
-            'Coach is updated' => new CoachResource($coach)
+            'Coach is successfully updated' => new CoachResource($coach)
         ]);
     }
 
@@ -131,6 +131,6 @@ class CoachController extends Controller
         //
         $coach->delete();
 
-        return response()->json('Coach is deleted');
+        return response()->json('Coach is successfully deleted');
     }
 }
