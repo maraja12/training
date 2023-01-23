@@ -31,7 +31,7 @@ class AuthorisationController extends Controller
 
         $token = $user->createToken('auth_token')->plainTextToken;
         return response()->json([
-            'message' => $user->name . 'successfully registrated',
+            'message' => $user->name . ' successfully registrated',
             'data' => $user,
             'access_token' => $token,
             'token_type' => 'Bearer'
@@ -49,7 +49,7 @@ class AuthorisationController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
-            'message' => $user->name . 'successfully logged in',
+            'message' => $user->name . ' successfully logged in',
             'access_token' => $token,
             'token_type' => 'Bearer'
         ]);
