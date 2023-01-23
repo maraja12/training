@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 Route::get('/coaches', [CoachController::class, 'index']);
 Route::get('/coaches/{id}', [CoachController::class, 'show']);
 
